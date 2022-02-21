@@ -9,10 +9,18 @@ public class HandPresence : MonoBehaviour
     private GameObject spawnedHandModel;
     private Animator handAnimator;
 
+
     public InputDeviceCharacteristics controllerCharacterictics;
     public GameObject handModelPrefab;
+
     
     void Start()
+    {
+        TryInitialize();
+        
+    }
+
+    void TryInitialize()
     {
         List<InputDevice> devices = new List<InputDevice>();
         InputDevices.GetDevicesWithCharacteristics(controllerCharacterictics, devices);
@@ -22,15 +30,13 @@ public class HandPresence : MonoBehaviour
             Debug.Log(item.name + item.characteristics);
         }
 
-        if(devices.Count > 0)
+        if (devices.Count > 0)
         {
             targetDevice = devices[0];
 
             spawnedHandModel = Instantiate(handModelPrefab, transform);
             handAnimator = spawnedHandModel.GetComponent<Animator>();
         }
-
-        
     }
     
     void UpdateHandAnimation()
@@ -56,25 +62,43 @@ public class HandPresence : MonoBehaviour
     
     void Update()
     {
-        
-        if (targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue) && primaryButtonValue)
+        if (!targetDevice.isValid)
         {
-            Debug.Log("Pressing Primary Button");
+            TryInitialize();
         }
-
-        
-        if(targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue) && triggerValue > 0.1f)
+        else
         {
-            Debug.Log("Trigger Pressed " + triggerValue);
-        }
+            if (targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue) && primaryButtonValue)
+            {
 
+                Debug.Log("Pressed Primary Button");
+
+
+
+
+            }
+            
+            if(targetDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonValue) && secondaryButtonValue)
+            {
+                Debug.Log("Pressed Secondary Button");
+            }
+
+
+            if (targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue) && triggerValue > 0.1f)
+            {
+                Debug.Log("Trigger Pressed " + triggerValue);
+            }
+
+
+            if (targetDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 primary2DAxisValue) && primary2DAxisValue != Vector2.zero)
+            {
+                Debug.Log("Primary Touchpad " + primary2DAxisValue);
+            }
+
+            spawnedHandModel.SetActive(true);
+            UpdateHandAnimation();
+        }
         
-        if(targetDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 primary2DAxisValue) && primary2DAxisValue != Vector2.zero)
-        {
-            Debug.Log("Primary Touchpad " + primary2DAxisValue);
-        }
-
-        spawnedHandModel.SetActive(true);
-        UpdateHandAnimation();
+        
     }
 }

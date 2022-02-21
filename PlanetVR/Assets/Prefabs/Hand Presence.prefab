@@ -45,3 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controllerCharacterictics: 576
   handModelPrefab: {fileID: 5686134208185362930, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
+  bodySpawner: {fileID: 8869422140131935710, guid: 375f54e3d8ca0ae4e93c9e36e1a6a29e, type: 3}
