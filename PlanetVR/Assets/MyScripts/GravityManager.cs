@@ -14,9 +14,11 @@ public class GravityManager : MonoBehaviour
     }
 
   
-    void Update()
+   
+
+    private void Update()
     {
-        
+        celestials = GameObject.FindGameObjectsWithTag("Celestials");
     }
 
     private void FixedUpdate()

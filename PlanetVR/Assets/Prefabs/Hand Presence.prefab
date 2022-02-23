@@ -44,5 +44,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controllerCharacterictics: 576
+  gravityManager: {fileID: 8261883826130052427, guid: 776fd23d1b770e1408e12f4ed47f4287, type: 3}
   handModelPrefab: {fileID: 5686134208185362930, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
-  bodySpawner: {fileID: 8869422140131935710, guid: 375f54e3d8ca0ae4e93c9e36e1a6a29e, type: 3}
+  body: {fileID: 8005429539167183182, guid: 6f96d7af6b8b3594989d9796b3f8f1c5, type: 3}

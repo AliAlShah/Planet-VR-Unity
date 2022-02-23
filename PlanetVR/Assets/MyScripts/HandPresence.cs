@@ -8,16 +8,19 @@ public class HandPresence : MonoBehaviour
     private InputDevice targetDevice;
     private GameObject spawnedHandModel;
     private Animator handAnimator;
+    private bool spawnTime;
 
 
     public InputDeviceCharacteristics controllerCharacterictics;
     public GameObject handModelPrefab;
+    public GameObject body;
+
 
     
     void Start()
     {
         TryInitialize();
-        
+        spawnTime = true;
     }
 
     void TryInitialize()
@@ -70,17 +73,22 @@ public class HandPresence : MonoBehaviour
         {
             if (targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue) && primaryButtonValue)
             {
+                if(spawnTime == true)
+                {
+                    Debug.Log("Pressed Primary Button");
 
-                Debug.Log("Pressed Primary Button");
 
-
-
-
+                    Instantiate(body);
+                    
+                    spawnTime = false;
+                }
+                
             }
             
             if(targetDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonValue) && secondaryButtonValue)
             {
                 Debug.Log("Pressed Secondary Button");
+                spawnTime = true;
             }
 
 

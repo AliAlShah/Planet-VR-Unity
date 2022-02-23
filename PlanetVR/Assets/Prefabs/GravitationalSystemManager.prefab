@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7253358496031604260
+--- !u!1 &8261883826130052424
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7253358496031604262}
-  - component: {fileID: 7253358496031604263}
+  - component: {fileID: 8261883826130052426}
+  - component: {fileID: 8261883826130052427}
   m_Layer: 0
-  m_Name: Hand Presence 1
+  m_Name: GravitationalSystemManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7253358496031604262
+--- !u!4 &8261883826130052426
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7253358496031604260}
+  m_GameObject: {fileID: 8261883826130052424}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,19 +31,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7253358496031604263
+--- !u!114 &8261883826130052427
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7253358496031604260}
+  m_GameObject: {fileID: 8261883826130052424}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07f56548e1f1d804e88c5fec19afb5c6, type: 3}
+  m_Script: {fileID: 11500000, guid: bfbd363dda0bb8844bf514f1281b04e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controllerCharacterictics: 320
-  gravityManager: {fileID: 8261883826130052427, guid: 776fd23d1b770e1408e12f4ed47f4287, type: 3}
-  handModelPrefab: {fileID: 109434732395284509, guid: 65847589f926b734d9eaed6e25f0046b, type: 3}
-  body: {fileID: 8005429539167183182, guid: 6f96d7af6b8b3594989d9796b3f8f1c5, type: 3}
