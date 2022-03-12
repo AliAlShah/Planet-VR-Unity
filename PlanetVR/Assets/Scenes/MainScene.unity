@@ -425,6 +425,10 @@ PrefabInstance:
       value: Button
       objectReference: {fileID: 0}
     - target: {fileID: 2512576001770505647, guid: 684a454fb249b3d40ab46320d90bdbb6, type: 3}
+      propertyPath: sceneId
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2512576001770505647, guid: 684a454fb249b3d40ab46320d90bdbb6, type: 3}
       propertyPath: onRelease.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OpenScene
       objectReference: {fileID: 0}
